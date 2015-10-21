@@ -5,7 +5,9 @@
   "main": "src/app.js",
   "scripts": {
     "test": "npm test",
-    "start": "nodemon ./src/app.js"
+    "start": "nodemon ./src/app.js",
+    "up": "node ./src/setup.js",
+    "down": "node ./src/teardown.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,11 @@
   "dependencies": {
     "consolidate": "^0.13.1",
     "express": "^4.13.3",
+    "mout": "^0.11.0",
     "nodemon": "^1.7.3",
-    "nunjucks": "^2.1.0"
+    "nunjucks": "^2.1.0",
+    "sequelize": "^3.12.2",
+    "sqlite3": "^3.1.0",
+    "umzug": "^1.6.0"
   }
 }
