@@ -1,0 +1,30 @@
+{
+  "name": "qanda",
+  "version": "0.0.1",
+  "description": "Quick express prototype",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "nodemon ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:psoots/qanda.git"
+  },
+  "keywords": [
+    "express",
+    "sequelize"
+  ],
+  "author": "Peter Soots",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psoots/qanda/issues"
+  },
+  "homepage": "https://github.com/psoots/qanda",
+  "dependencies": {
+    "consolidate": "^0.13.1",
+    "express": "^4.13.3",
+    "handlebars": "^4.0.3",
+    "nodemon": "^1.7.3"
+  }
+}
