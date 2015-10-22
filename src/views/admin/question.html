@@ -1,0 +1,6 @@
+{{ question.body }}
+<ol class="options">
+    {% for option in question.options %}
+        <li>{{ option.body }}</li>
+    {% endfor %}
+</ol>

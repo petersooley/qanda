@@ -2,11 +2,21 @@
 
 {% block content %}
 <div class="row">
-    <h4 class="brand">Q & A</h4>
+    <h2 class="brand">Q & A</h2>
 </div>
 <div class="row">
     <div class="one-half column">
-        <p>Welcome to the admin side of our Q and A sessions. Add some questions on the right. </p>
+        <h5>Welcome to the admin side of our Q and A sessions. Add some questions on the right. </h5>
+
+        <h6>Current Questions:</h6>
+
+        {% if questions.length %}
+            <ul class="questions">
+                {% for question in questions %}
+                    <li>{% include "admin/question.html" %}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
     </div>
     <div class="one-half column">
         <form action="/admin/submit" method="post">

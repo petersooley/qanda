@@ -62,9 +62,3 @@ forEach(data, function (obj) {
 
 
 });
-
-
-
-var q1 = Question.create({
-  body: 'How long can dogs breathe under water?'
-});

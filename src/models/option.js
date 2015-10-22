@@ -7,6 +7,4 @@ var OptionModel = db.define('option', {
   position: Sequelize.INTEGER,
 });
 
-OptionModel.belongsTo(QuestionModel);
-
 module.exports = OptionModel;
