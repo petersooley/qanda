@@ -7,37 +7,13 @@
         <h4>No matter what you choose, <strong>you</strong> are the winner.</h4>
     </div>
     <div class="one-half column">
-        <form action="/submit" method="post">
-            <h5>Question goes here</h5>
-            <ul class="no-style">
-                <li>
-                    <label>
-                        <input type="radio" name="choice" />
-                        <span class="label-body">Option 1</span>
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="radio" name="choice" />
-                        <span class="label-body">Option 1</span>
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="radio" name="choice" />
-                        <span class="label-body">Option 1</span>
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="radio" name="choice" />
-                        <span class="label-body">Option 1</span>
-                    </label>
-                </li>
-            </ul>
-
-            <input type="submit" value="Next" class="button-primary" tabindex="6"/>
-        </form>
+        {% if questions.length %}
+            {% for question in questions %}
+                {% include "guest/question.html" %}
+            {% endfor %}
+        {% else %}
+            <h5>There are no questions at the moment. Come back later.</h5>
+        {% endif %}
 
     </div>
 </div>

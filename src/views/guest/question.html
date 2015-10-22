@@ -1,0 +1,20 @@
+<form action="/submit" method="post" data-quests {% if loop.first %}{% else %}style="display: none;"{% endif %}>
+    <h5>{{ question.body }}</h5>
+    <ul class="no-style">
+        {% for option in question.options %}
+            <li>
+                <label>
+                    <input type="radio" name="choice" value="{{ option.id }}"/>
+                    <span class="label-body">{{ option.body }}</span>
+                </label>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% if loop.last %}
+        <input type="submit" value="Submit" class="button-primary" data-quests-done  tabindex="6"/>
+    {% else %}
+        <input type="submit" value="Next" class="button-primary" data-quests-next tabindex="6"/>
+    {% endif %}
+
+</form>
