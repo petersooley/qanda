@@ -1,27 +1,48 @@
-var Promise = require('bluebird');
 var Sequelize = require('sequelize');
+var Promise = require('bluebird');
 var db = require('../connection.js');
+var queryInterface = db.getQueryInterface();
+var merge = require('mout/object/merge');
 
-var QuestionModel = db.define('question', {
-  body: Sequelize.TEXT
-});
-var OptionModel = db.define('option', {
-  name: Sequelize.STRING
-});
+var baseTableAttrs = {
+  id: {
+    type: Sequelize.INTEGER.UNSIGNED,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  createdAt: {
+    type: Sequelize.DATE
+  },
+  updatedAt: {
+    type: Sequelize.DATE
+  },
+}
 
-OptionModel.belongsTo(QuestionModel);
+function createTable(tableName, attrs) {
+  return queryInterface.createTable(tableName, merge(baseTableAttrs, attrs));
+}
 
 module.exports = {
   up: function () {
     return new Promise(function(ready, orNot) {
-      db.sync({force: true});
+      createTable('questions', {
+        body: Sequelize.TEXT,
+      });
+      createTable('options', {
+        name: Sequelize.STRING,
+        position: Sequelize.INTEGER,
+        questionId: Sequelize.INTEGER.UNSIGNED,
+      });
+      queryInterface.addIndex('options', ['questionId'], {
+        indexName: 'options_question_id',
+      })
       ready();
     });
   },
   down: function () {
     return new Promise(function(ready, orNot) {
-      OptionModel.drop();
-      QuestionModel.drop();
+      queryInterface.dropTable('questions');
+      queryInterface.dropTable('options');
       ready();
     });
   }

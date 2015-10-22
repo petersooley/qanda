@@ -4,7 +4,10 @@ var forEach = require('mout/collection/forEach');
 var Promise = require('bluebird');
 
 var schema = new Umzug({
-  sequelize: db,
+  storage: 'sequelize',
+  storageOptions: {
+    sequelize: db,
+  },
   migrations: {
     path: __dirname + '/migrations',
   }

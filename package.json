@@ -6,8 +6,9 @@
   "scripts": {
     "test": "npm test",
     "start": "nodemon ./src/app.js",
-    "up": "node ./src/setup.js",
-    "down": "node ./src/teardown.js"
+    "up": "node ./src/scripts/setup.js",
+    "down": "node ./src/scripts/teardown.js",
+    "seed": "node ./src/scripts/seed.js"
   },
   "repository": {
     "type": "git",
