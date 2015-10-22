@@ -1,7 +1,5 @@
-var models = require('../models/all');
+var repo = require('../models/repo');
 var forEach = require('mout/array/forEach');
-var Question = models.question;
-var Option = models.option;
 
 var data = [
   {
@@ -41,24 +39,5 @@ var data = [
 
 
 forEach(data, function (obj) {
-  Question
-    .build({
-      body: obj.question.body,
-    })
-    .save()
-    .then(function (question) {
-      forEach(obj.options, function(opt, index) {
-        Option.create({
-          body: opt,
-          position: index,
-          questionId: question.id,
-        });
-      });
-    })
-    .catch(function (err) {
-      console.trace(err);
-    });
-
-
-
+  repo.addQuestion(obj);
 });

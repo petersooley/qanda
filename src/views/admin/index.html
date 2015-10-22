@@ -6,7 +6,7 @@
 </div>
 <div class="row">
     <div class="one-half column">
-        <h5>Welcome to the admin side of our Q and A sessions. Add some questions on the right. </h5>
+        <h5>Welcome to the admin side of our Q & A sessions. Add some questions on the right. </h5>
 
         <h6>Current Questions:</h6>
 
@@ -22,15 +22,15 @@
         <form action="/admin/submit" method="post">
             <div class="field">
                 <label class="label-body" for="question-body">Question</label>
-                <textarea name="question[body]" rows="4" cols="40" class="u-full-width" id="question-body" tabindex="1" placeholder="Where does the sun go at night?"></textarea>
+                <textarea name="question[body]" rows="4" cols="40" class="u-full-width" id="question-body" tabindex="1" placeholder="Where does the sun go at night?" required></textarea>
             </div>
 
             <div class="field">
                 <label for="question-options">Options</label>
-                <input type="text" name="question[options][0]" class="u-full-width" id="question-options-0" tabindex="2" placeholder="it shrinks and grows again in the morning" />
-                <input type="text" name="question[options][1]" class="u-full-width" id="question-options-1" tabindex="3" placeholder="it's passed between the gods in an epic game of pickle" />
-                <input type="text" name="question[options][2]" class="u-full-width" id="question-options-2" tabindex="4" placeholder="it goes to bed like we do" />
-                <input type="text" name="question[options][3]" class="u-full-width" id="question-options-3" tabindex="5" placeholder="it has tea with the other stars" />
+                <input type="text" name="options[]" class="u-full-width" tabindex="2" placeholder="it shrinks and grows again in the morning" required />
+                <input type="text" name="options[]" class="u-full-width" tabindex="3" placeholder="it's passed between the gods in an epic game of pickle" required />
+                <input type="text" name="options[]" class="u-full-width" tabindex="4" placeholder="it goes to bed like we do" required />
+                <input type="text" name="options[]" class="u-full-width" tabindex="5" placeholder="it has tea with the other stars" required />
             </div>
 
             <div class="field">

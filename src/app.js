@@ -1,10 +1,13 @@
 var express = require('express');
 var cons = require('consolidate');
 var nunjucks = require('nunjucks');
+var bodyParser = require('body-parser');
 var guestRouter = require('./routes/guest');
 var adminRouter = require('./routes/admin');
 
 var app = express();
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 cons.requires.nunjucks = nunjucks.configure(__dirname+'/views', {
   autoescape: true,

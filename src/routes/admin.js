@@ -1,22 +1,27 @@
 var express = require('express');
 var router = express.Router();
-var Question = require('../models/question');
-var Option = require('../models/option');
+var repo = require('../models/repo');
+
+
+function catchErr(res) {
+  return function(err) {
+    console.trace(err);
+    res.status(500);
+    return res.render('error', {error: err});
+  }
+}
 
 router.get('/', function (req, res) {
-  Question.findAll({
-    include: [Option],
-    //order: 'questions.updatedAt DESC' //fixme
-  })
+  repo.findAll()
     .then(function(questions) {
       return res.render('admin/index', {questions: questions});
     })
-    .catch(function(err) {
-      console.trace(err);
-      res.status(500);
-      return res.render('error', {error: err});
-    });
+    .catch(catchErr(res));
+});
 
+router.post('/submit', function (req, res) {
+  repo.addQuestion(req.body);
+  res.redirect('/admin');
 });
 
 module.exports = router;

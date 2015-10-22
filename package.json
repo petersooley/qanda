@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/psoots/qanda",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "consolidate": "^0.13.1",
     "express": "^4.13.3",
     "mout": "^0.11.0",
