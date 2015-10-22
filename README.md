@@ -12,9 +12,6 @@
 1. [add questions](http://localhost:3000/admin)
 1. [answer questions](http://localhost:3000)
 
-### TODO
-
-* Test on Node 4.x
 
 ### Should Happen
 

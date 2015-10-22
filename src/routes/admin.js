@@ -20,8 +20,12 @@ router.get('/', function (req, res) {
 });
 
 router.post('/submit', function (req, res) {
-  repo.addQuestion(req.body);
-  res.redirect('/admin');
+  repo.addQuestion(req.body)
+    .then(function () {
+      res.redirect('/admin');
+    })
+    .catch(catchErr(res));
+
 });
 
 module.exports = router;
