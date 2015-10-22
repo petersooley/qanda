@@ -8,6 +8,7 @@
     "start": "nodemon ./src/app.js",
     "up": "node ./src/scripts/setup.js",
     "down": "node ./src/scripts/teardown.js",
+    "reset": "node ./src/scripts/reset.js",
     "seed": "node ./src/scripts/seed.js"
   },
   "repository": {

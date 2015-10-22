@@ -3,8 +3,10 @@ var db = require('../db/connection.js');
 var QuestionModel = require('./question');
 
 var OptionModel = db.define('option', {
-  name: Sequelize.STRING,
+  body: Sequelize.STRING,
   position: Sequelize.INTEGER,
 });
 
 OptionModel.belongsTo(QuestionModel);
+
+module.exports = OptionModel;

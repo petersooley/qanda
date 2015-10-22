@@ -29,7 +29,7 @@ module.exports = {
         body: Sequelize.TEXT,
       });
       createTable('options', {
-        name: Sequelize.STRING,
+        body: Sequelize.STRING,
         position: Sequelize.INTEGER,
         questionId: Sequelize.INTEGER.UNSIGNED,
       });
