@@ -2,9 +2,6 @@
 
 {% block content %}
 <div class="row">
-    <h2 class="brand">Q & A</h2>
-</div>
-<div class="row">
     <div class="one-half column">
         <h5>Welcome to the admin side of our Q & A sessions. Add some questions on the right. </h5>
 
@@ -20,22 +17,20 @@
     </div>
     <div class="one-half column">
         <form action="/admin/submit" method="post">
-            <div class="field">
-                <label class="label-body" for="question-body">Question</label>
-                <textarea name="question[body]" rows="4" cols="40" class="u-full-width" id="question-body" tabindex="1" placeholder="Where does the sun go at night?" required></textarea>
-            </div>
 
-            <div class="field">
-                <label for="question-options">Options</label>
-                <input type="text" name="options[]" class="u-full-width" tabindex="2" placeholder="it shrinks and grows again in the morning" required />
-                <input type="text" name="options[]" class="u-full-width" tabindex="3" placeholder="it's passed between the gods in an epic game of pickle" required />
-                <input type="text" name="options[]" class="u-full-width" tabindex="4" placeholder="it goes to bed like we do" required />
-                <input type="text" name="options[]" class="u-full-width" tabindex="5" placeholder="it has tea with the other stars" required />
-            </div>
+            <label for="question-body">Question</label>
+            <textarea name="question[body]" rows="4" cols="40" class="u-full-width" id="question-body" tabindex="1" placeholder="Where does the sun go at night?" required></textarea>
 
-            <div class="field">
-                <input type="submit" value="Save Question" class="u-pull-right button-primary" tabindex="6"/>
-            </div>
+
+            <label for="question-options">Options</label>
+            <input type="text" name="options[]" class="u-full-width" tabindex="2" placeholder="it shrinks and grows again in the morning" required />
+            <input type="text" name="options[]" class="u-full-width" tabindex="3" placeholder="it's passed between the gods in an epic game of pickle" required />
+            <input type="text" name="options[]" class="u-full-width" tabindex="4" placeholder="it goes to bed like we do" required />
+            <input type="text" name="options[]" class="u-full-width" tabindex="5" placeholder="it has tea with the other stars" required />
+
+
+            <input type="submit" value="Save Question" class="u-pull-right button-primary" tabindex="6"/>
+
         </form>
     </div>
 </div>

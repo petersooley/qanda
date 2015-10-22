@@ -15,3 +15,7 @@ ul.questions > li {
     border-top: 1px dashed lightgray;
     margin-bottom: 5px;
 }
+
+ul.no-style li {
+    list-style-type: none;
+}
