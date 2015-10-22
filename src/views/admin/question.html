@@ -1,6 +1,19 @@
-{{ question.body }}
-<ol class="options">
-    {% for option in question.options %}
-        <li>{{ option.body }}</li>
-    {% endfor %}
-</ol>
+<table class="u-full-width questions">
+    <thead>
+        <tr>
+            <th colspan="2">
+                {{ question.body }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for option in question.options %}
+            <tr class="options">
+                <td>{{ option.body }}</td>
+                <td class="votes">{% if option.votes %}{{ option.votes }}{% endif %}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

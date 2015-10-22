@@ -31,6 +31,10 @@ module.exports = {
       createTable('options', {
         body: Sequelize.STRING,
         position: Sequelize.INTEGER,
+        votes: {
+          type: Sequelize.INTEGER.UNSIGNED,
+          defaultValue: 0,
+        },
         questionId: Sequelize.INTEGER.UNSIGNED,
       });
       queryInterface.addIndex('options', ['questionId'], {

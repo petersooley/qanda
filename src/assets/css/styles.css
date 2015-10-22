@@ -6,14 +6,13 @@ h4.brand {
     border-bottom: 1px solid lightgray;
 }
 
-ol.options li {
-    list-style-type: upper-alpha;
+table.questions {
+    margin-bottom: 3.5em;
 }
 
-ul.questions > li {
-    padding-top: 10px;
-    border-top: 1px dashed lightgray;
-    margin-bottom: 5px;
+table.questions tr.options td.votes {
+    text-align: right;
+    padding-right: 5px;
 }
 
 ul.no-style li {

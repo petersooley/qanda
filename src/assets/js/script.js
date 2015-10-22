@@ -18,6 +18,19 @@ function show(el) {
   el.style.display = '';
 }
 
+function post(form) {
+  var url = form.action;
+
+  return reqwest({
+    url: url,
+    method: form.method,
+    data: reqwest.serialize(form),
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  })
+}
+
 function ready(fn) {
   if (document.readyState != 'loading'){
     fn();
@@ -43,7 +56,7 @@ function Quest(el) {
 Quest.prototype.handleSubmit = function handleSubmit(event) {
   event.preventDefault();
 
-  this.submit();
+  post(this.el);
 
   hide(this.el);
   if (this.next) {
@@ -53,10 +66,6 @@ Quest.prototype.handleSubmit = function handleSubmit(event) {
   }
 };
 
-Quest.prototype.submit = function submit() {
-  // todo
-  console.log('submitting...');
-}
 
 
 function start() {

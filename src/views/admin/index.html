@@ -8,11 +8,11 @@
         <h6>Current Questions:</h6>
 
         {% if questions.length %}
-            <ul class="questions">
+
                 {% for question in questions %}
-                    <li>{% include "admin/question.html" %}</li>
+                    {% include "admin/question.html" %}
                 {% endfor %}
-            </ul>
+
         {% endif %}
     </div>
     <div class="one-half column">
