@@ -5,13 +5,12 @@
     <div class="one-half column">
         <h5>Welcome to the admin side of our Q & A sessions. Add some questions on the right. </h5>
 
-        <h6>Current Questions:</h6>
-
         {% if questions.length %}
+            <h6>Current Questions:</h6>
 
-                {% for question in questions %}
-                    {% include "admin/question.html" %}
-                {% endfor %}
+            {% for question in questions %}
+                {% include "admin/question.html" %}
+            {% endfor %}
 
         {% endif %}
     </div>

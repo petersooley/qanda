@@ -1,3 +1,5 @@
+require('dotenv').load();
+
 var express = require('express');
 var cons = require('consolidate');
 var nunjucks = require('nunjucks');
